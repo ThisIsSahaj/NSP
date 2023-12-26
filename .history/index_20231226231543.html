@@ -10,7 +10,7 @@
     <style>
 
         input[type=text], input[type=password] {
-          width: 80%;
+          width: 40%;
           padding: 12px 20px;
           margin: 8px 0;
           display: inline-block;
@@ -19,7 +19,7 @@
         }
         
         .cancelbtn {
-          width: 50%;
+          width: 20%;
           padding: 10px 18px;
           background-color: #f44336;
         }
@@ -35,16 +35,11 @@
         .loginContainer {
           width: 80%;
           padding: 16px;
+          border: 2px solid red;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-
-        .btns{
-            display: flex;
-            flex-direction: row;
-            padding: 20px 0px;
         }
         
         span.psw {
@@ -136,7 +131,7 @@
         </div>
         <div class="button">
            <button class="login" onclick="document.getElementById('id01').style.display='block'">Log in</button>
-            <button class="signup" onclick="document.getElementById('id01').style.display='block'">Sign up</button>
+            <button class="signup">Sign up</button>
         </div>
     </nav>
 </header>
@@ -182,6 +177,13 @@
 
 
 
+
+
+
+
+
+
+
 <div id="id01" class="modal">
   
     <form class="modal-content animate" action="/action_page.php" method="post">
@@ -195,22 +197,19 @@
 
         <input type="password" placeholder="Enter Password" name="psw" required>
           
-        <div class="btns">
+        <button type="submit">Login</button>
 
-            <button onclick="document.getElementById('id01').style.display='none'" type="button">Login</button>
-            
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        </div>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         
       </div>
     </form>
   </div>
   
   <script>
-
+  // Get the modal
   var modal = document.getElementById('id01');
   
-
+  // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
       if (event.target == modal) {
           modal.style.display = "none";
